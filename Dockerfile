@@ -17,8 +17,8 @@ ENV PKG_RELEASE   1~buster
 # Download certificate and key from the customer portal https://account.f5.com/myf5
 # and copy to the build context and set correct permissions
 RUN mkdir -p /etc/ssl/nginx
-COPY etc/ssl/nginx/nginx-repo.crt /etc/ssl/nginx/nginx-repo.crt
-COPY etc/ssl/nginx/nginx-repo.key /etc/ssl/nginx/nginx-repo.key
+COPY etc/ssl/nginx/nginx-selfsigned.crt /etc/ssl/nginx/nginx-repo.crt
+COPY etc/ssl/nginx/nginx-selfsigned.key /etc/ssl/nginx/nginx-repo.key
 RUN set -x \
   && chmod 644 /etc/ssl/nginx/* \
   # Create nginx user/group first, to be consistent throughout Docker variants
