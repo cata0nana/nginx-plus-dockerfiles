@@ -181,8 +181,8 @@ RUN set -x \
 #COPY etc/ssl/www.example.com.crt /etc/ssl/www.example.com.crt
 #COPY etc/ssl/www.example.com.key /etc/ssl/www.example.com.key
 
-# COPY /etc/nginx (Nginx configuration) directory
-COPY etc/nginx /etc/nginx
+# COPY /etc/nginx (Nginx configuration) directory NGINX-PLUS/etc
+COPY NGINX-PLUS/etc/nginx /etc/nginx
 
 # EXPOSE ports, HTTP 80, HTTPS 443 and, Nginx status page 8080
 EXPOSE 80 443 8080
