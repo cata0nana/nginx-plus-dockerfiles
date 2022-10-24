@@ -19,8 +19,7 @@ ENV PKG_RELEASE   1~buster
 RUN mkdir -p /etc/ssl/nginx
 COPY etc/ssl/nginx/nginx-selfsigned.crt /etc/ssl/nginx/nginx-repo.crt
 COPY etc/ssl/nginx/nginx-selfsigned.key /etc/ssl/nginx/nginx-repo.key
-RUN set -x \
-  && chmod 644 /etc/ssl/nginx/* \
+RUN chmod 644 /etc/ssl/nginx/* \
   # Create nginx user/group first, to be consistent throughout Docker variants
   && addgroup --system --gid 101 nginx \
   && adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 101 nginx \
